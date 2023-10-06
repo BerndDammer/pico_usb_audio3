@@ -64,8 +64,8 @@ pico_set_program_version(usb_audio3 "0.1.0")
 
 # Add the standard include files to the build
 target_include_directories(usb_audio3 PRIVATE
-  ${CMAKE_CURRENT_LIST_DIR}
-  ${CMAKE_CURRENT_LIST_DIR}/src
+#  ${CMAKE_CURRENT_LIST_DIR}
+   ${CMAKE_CURRENT_LIST_DIR}/src
 #  ${CMAKE_CURRENT_LIST_DIR}/../.. # for our common lwipopts or any other standard includes, if required
 )
 
@@ -81,12 +81,12 @@ target_link_libraries(usb_audio3
     pico_stdlib
 #    usb_device
 #    pico_audio_i2s
-    pico_multicore
+#    pico_multicore
 #########################
 #    usb_common
     hardware_irq
-    hardware_dma
-    hardware_pio
+#    hardware_dma
+#    hardware_pio
     pico_fix_rp2040_usb_device_enumeration
 #    pico_audio_headers
     pico_sync

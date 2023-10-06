@@ -10,7 +10,7 @@
 #include "pico/usb_device.h"
 #include "pico/audio.h"
 //#include "pico/audio_i2s.h"
-#include "pico/multicore.h"
+//#include "pico/multicore.h"
 #include "lufa/AudioClassCommon.h"
 
 // todo forget why this is using core 1 for sound: presumably not necessary
@@ -590,9 +590,9 @@ void usb_sound_card_init() {
     usb_device_start();
 }
 
-static void core1_worker() {
+//static void core1_worker() {
 //    audio_i2s_set_enabled(true);
-}
+//}
 
 int main(void) {
     set_sys_clock_48mhz();
@@ -642,7 +642,7 @@ int main(void) {
 //    assert(ok);
     usb_sound_card_init();
 
-    multicore_launch_core1(core1_worker);
+//    multicore_launch_core1(core1_worker);
     printf("HAHA %04x %04x %04x %04x\n", MIN_VOLUME, DEFAULT_VOLUME, MAX_VOLUME, VOLUME_RESOLUTION);
     // MSD is irq driven
     while (1) __wfi();
